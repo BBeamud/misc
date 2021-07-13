@@ -47,3 +47,10 @@ Commands for tools mentioned in manuscript
 
 `fastANI`
 
+**[ViPTreeGen](https://github.com/yosuken/ViPTreeGen)**
+`ViPTreeGen`
+
+**[VIRIDIC](http://rhea.icbm.uni-oldenburg.de/VIRIDIC/)**
+```
+
+**[hmmscan]
