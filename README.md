@@ -75,7 +75,7 @@ To compare phages against *Klebsiella* viruses.
 
 `ViPTreeGen --ncpus 8 $new_ref_kleb.fasta $output`
 
-*PS: You have to make sure that your seq ids are short. 
+*PS: You have to make sure that your seq ids are short*
 
 ### Depolymerases 
 
