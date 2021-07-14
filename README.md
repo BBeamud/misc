@@ -1,8 +1,11 @@
 # misc
 
-Commands for tools mentioned in manuscript
+Commands for tools and custom scripts used in manuscript
 
 ## 1. Genome analyses of bacteriophages 
+
+### Databases
+
 
 ### Quality control
 
@@ -41,16 +44,33 @@ Commands for tools mentioned in manuscript
 
 **[HMMER](
 
+**[hmmscan]
+
 ### Comparative genomics
 
 **[fastANI](https://github.com/ParBLiSS/FastANI)**
 
-`fastANI`
+To discriminate between phage strains within isolated phages:
+`fastANI --ql $list_fasta_new.txt --rl $list_fasta_new.txt -o $output.txt --fragLen 50 --matrix`
+To compare phages against previously sequenced:
+`fastANI --ql $list_fasta_new_ref.txt --rl $list_fasta_new_ref.txt -o $output.txt --fragLen 500 --matrix`
+Get ref sequences which are related to your phages:
 
-**[ViPTreeGen](https://github.com/yosuken/ViPTreeGen)**
-`ViPTreeGen`
 
 **[VIRIDIC](http://rhea.icbm.uni-oldenburg.de/VIRIDIC/)**
-```
+In order to run VIRIDIC successfully with a large number of genomes you might have to modify the options of the **[future](https://github.com/HenrikBengtsson/future)** R package in your Rprofile: options(future.globals.maxSize=600000000) (that size it was worked for me in that time)
 
-**[hmmscan]
+`viridic.bash projdir=$output_dir in=$`
+
+
+**[ViPTreeGen](https://github.com/yosuken/ViPTreeGen)**
+To compare phages against *Klebsiella* viruses. First, you have to make sure that your seq ids are short. 
+`ViPTreeGen --ncpus 8 $new_ref_kleb.fasta $output`
+
+### Depolymerases 
+
+
+### Recombination
+
+
+### Plots
