@@ -63,13 +63,15 @@ Get ref sequences which are related to your phages:
 
 **[VIRIDIC](http://rhea.icbm.uni-oldenburg.de/VIRIDIC/)**
 
-In order to run VIRIDIC successfully with a large number of genomes you might have to modify the options of the **[future](https://github.com/HenrikBengtsson/future)** R package in your Rprofile: options(future.globals.maxSize=600000000) (that size it was worked for me in that time)
+*In order to run VIRIDIC successfully with a large number of genomes you might have to modify the options of the **[future](https://github.com/HenrikBengtsson/future)** R package in your Rprofile: options(future.globals.maxSize=600000000) (PS: that size worked for me)*
 
 `viridic.bash projdir=$output_dir in=$`
 
 
 **[ViPTreeGen](https://github.com/yosuken/ViPTreeGen)**
+
 To compare phages against *Klebsiella* viruses. First, you have to make sure that your seq ids are short. 
+
 `ViPTreeGen --ncpus 8 $new_ref_kleb.fasta $output`
 
 ### Depolymerases 
