@@ -51,13 +51,18 @@ Commands for tools and custom scripts used in manuscript
 **[fastANI](https://github.com/ParBLiSS/FastANI)**
 
 To discriminate between phage strains within isolated phages:
+
 `fastANI --ql $list_fasta_new.txt --rl $list_fasta_new.txt -o $output.txt --fragLen 50 --matrix`
+
 To compare phages against previously sequenced:
+
 `fastANI --ql $list_fasta_new_ref.txt --rl $list_fasta_new_ref.txt -o $output.txt --fragLen 500 --matrix`
+
 Get ref sequences which are related to your phages:
 
 
 **[VIRIDIC](http://rhea.icbm.uni-oldenburg.de/VIRIDIC/)**
+
 In order to run VIRIDIC successfully with a large number of genomes you might have to modify the options of the **[future](https://github.com/HenrikBengtsson/future)** R package in your Rprofile: options(future.globals.maxSize=600000000) (that size it was worked for me in that time)
 
 `viridic.bash projdir=$output_dir in=$`
