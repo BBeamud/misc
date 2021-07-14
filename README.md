@@ -1,10 +1,23 @@
-# misc
+# Misc
 
 Commands for tools and custom scripts used in manuscript
 
 ## 1. Genome analyses of bacteriophages 
 
 ### Databases
+
+**[inphared](https://github.com/RyanCook94/inphared)**
+
+Get up-to-date bacteriophage genome database
+
+`perl523 inphared.pl`
+
+*PS: Only worked with perl version 5.23 for me* 
+
+**[seqtk](https://github.com/lh3/seqtk)**
+
+Get *Klebsiella* phages from inphared
+
 
 
 ### Quality control
@@ -29,14 +42,28 @@ Commands for tools and custom scripts used in manuscript
 
 **[MIRA4](https://sourceforge.net/p/mira-assembler/wiki/Home/)** (v.)
 
+*You might have to downsample your data (<100x)
+
+## Assembly quality
 
 **[QUAST](https://github.com/ablab/quast)** (v.)
 
-` quast.py`
+Basic stats
+
+`quast.py`
+
+**[apc](https://github.com/tseemann/apc/blob/master/apc.pl)**
+
+Check circulariry of phage genomes
+
+`perl apc.pl -b $output -r $sample_join_corrected.fastq $genome.fasta`
+
+*PS: Corrected reads were obtained from SPAdes assembly and concatenated with 'cat'. 
 
 ### Annotation
 
 **[PROKKA](https://github.com/tseemann/prokka)**
+
 `prokka `
 
 **[InterProScan](https://www.ebi.ac.uk/interpro/download/)**
@@ -81,6 +108,9 @@ To compare phages against *Klebsiella* viruses.
 
 
 ### Recombination
+
+
+### Prepare genbank submission
 
 
 ### Plots
