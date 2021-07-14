@@ -58,7 +58,7 @@ Check circulariry of phage genomes
 
 `perl apc.pl -b $output -r $sample_join_corrected.fastq $genome.fasta`
 
-*PS: Corrected reads were obtained from SPAdes assembly and concatenated with 'cat'. 
+*PS: Corrected reads were obtained from SPAdes assembly and concatenated with 'cat'* 
 
 ### Annotation
 
