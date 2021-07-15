@@ -1,6 +1,6 @@
 # Misc
 
-Commands for tools and custom scripts used in manuscript with tips & tricks 
+Commands for tools and custom scripts used in manuscript with (personal) tips & tricks 
 
 ## 1. Genome analyses of bacteriophages 
 
@@ -63,7 +63,7 @@ Basic stats
 
 **[apc](https://github.com/tseemann/apc/blob/master/apc.pl)**
 
-Check circulariry of phage genomes
+Check circulariry of phage genomes if Unicycler was not used:
 
 `perl apc.pl -b $output -r $sample_join_corrected.fastq $genome.fasta`
 
@@ -77,12 +77,16 @@ Check circulariry of phage genomes
 
 *PS: Even you used a database with prokka to improve annotations, prokka by default seems to take the name of the first hit only. If the first hit is annotated as an hypothetical protein you'll miss the rest of the info*. 
 
-**[BLASTP]()**
+**[BLASTP](https://www.ncbi.nlm.nih.gov/books/NBK279690/)**
+
+`blastp -query $ID_from_prokka.faa -task blastp -db $phage_proteins_DB.faa -evalue 0.00001 -outfmt "6  qseqid salltitles pident length mismatch gapopen qstart qend sstart send evalue bitscore" | sed 's/~*//g' > $ID_blastp.tab'`
 
 
+**[HMMER](https://www.ebi.ac.uk/Tools/hmmer/search/hmmscan)**
 
+Each protein is analysed separately. To split proteome file (\*.faa) into individual proteins you can use [multifasta_to_fasta.pl](http://eugenes.org/gmod/genogrid/scripts/split_multifasta.pl)
 
-**[hmmscan]
+`hmmscan --domtblout=$sample'.dom' --noali --notextw ~/Documentos/proyectos/fpu_resistencias/databases/anotacion/AllvogHMMprofiles/all_VOGs.hmm $i` 
 
 ### Comparative genomics
 
