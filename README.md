@@ -1,6 +1,6 @@
 # Misc
 
-Commands for tools and custom scripts used in manuscript
+Commands for tools and custom scripts used in manuscript with tips & tricks 
 
 ## 1. Genome analyses of bacteriophages 
 
@@ -12,7 +12,7 @@ Get up-to-date bacteriophage genome database
 
 `perl523 inphared.pl`
 
-*PS: Only worked with perl version 5.23 for me* 
+*PS: Only worked with perl version 5.23 for me. Ryan is always willing to help with issues, so don't be afraid to reach him, it is worthy!* 
 
 **[seqtk](https://github.com/lh3/seqtk)**
 
@@ -31,6 +31,8 @@ Get *Klebsiella* phages from inphared
 ` prinseq . `
 
 ### Assembly
+
+We prioritised **Unicycler** over the rest of programs as we observed more consistent results for technical replicates and closely-related strains. Plus: you have also the info about the circularisation of the genome. If Unicycler does not success, 'the more you try, the better'. 
 
 **[Unicycler](https://github.com/rrwick/Unicycler)** (v.)
 
@@ -73,10 +75,12 @@ Check circulariry of phage genomes
 
 `prokka `
 
-**[InterProScan](https://www.ebi.ac.uk/interpro/download/)**
-`interproscan`
+*PS: Even you used a database with prokka to improve annotations, prokka by default seems to take the name of the first hit only. If the first hit is annotated as an hypothetical protein you'll miss the rest of the info*. 
 
-**[HMMER](
+**[BLASTP]()**
+
+
+
 
 **[hmmscan]
 
@@ -113,6 +117,10 @@ To compare phages against *Klebsiella* viruses.
 
 ### Depolymerases 
 
+**[InterProScan](https://www.ebi.ac.uk/interpro/download/)**
+`interproscan`
+
+**[HMMER](
 
 ### Recombination
 
