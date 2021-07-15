@@ -36,13 +36,20 @@ Get *Klebsiella* phages from inphared
 
 ` unicycler`
 
-**[SPADES](http://cab.spbu.ru/software/spades/)** (v.) 
+**[SPAdes](http://cab.spbu.ru/software/spades/)** (v.) 
 
 ` spades.py `
 
 **[MIRA4](https://sourceforge.net/p/mira-assembler/wiki/Home/)** (v.)
 
-*You might have to downsample your data (<100x)
+Max. k-mer size for SPAdes (and therefore, Unicycler) is 127. That's almost in the limit for 150 bp reads, but for 250 bp, the increase of the k-mer size can aid a lot (in our experience) to close phage genomes at the cost of increased computation time. 
+
+Using a template of the manifest file [MIRA_manifest_ex.txt]( ) with custom parameters (k-mer sizes of 149,171 & 193)
+
+`cat MIRA_manifest_ex.txt | sed "s/SAMPLE/$d/" | sed "s/R1/$R1/" | sed "s/R2/$R2/" > mira-$d-manifest.txt
+mira mira-$d-manifest.txt`
+
+*You might have to downsample your data (<100x)*
 
 ## Assembly quality
 
